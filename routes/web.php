@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\questionController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function () {
