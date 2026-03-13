@@ -23,6 +23,12 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 
-# Project exclude paths
-/storage/app/
-/storage/framework/
+# Laravel storage folders — keep the directories but ignore content
+/storage/app/.gitkeep
+/storage/framework/cache/.gitkeep
+/storage/framework/sessions/.gitkeep
+/storage/framework/views/.gitkeep
+/storage/logs/.gitkeep
+
+# Bootstrap cache — keep folder, ignore generated files
+/bootstrap/cache/.gitkeep
