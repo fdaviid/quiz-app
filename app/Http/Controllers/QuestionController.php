@@ -6,13 +6,13 @@ use App\Http\Requests\questionRequest;
 use App\Models\question;
 use Illuminate\View\View;
 
-class questionController extends Controller
+class QuestionController extends Controller
 {
     public function index(): View
     {
-        $questions = Question::with('answers')->inRandomOrder()->take(10)->get();
+//        $questions = Question::with('answers')->inRandomOrder()->take(10)->get();
 
-        return view('welcome', compact('questions'));
+        return view('welcome');
     }
 
     public function store(questionRequest $request)

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\answerRequest;
 use App\Models\answer;
 
-class answerController extends Controller
+class AnswerController extends Controller
 {
     public function index()
     {
