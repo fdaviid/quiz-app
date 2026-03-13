@@ -12,7 +12,7 @@ class QuestionSeeder extends Seeder
         $questions = [
 
             [
-                'question' => 'What does Clean Code mean?',
+                'text' => 'What does Clean Code mean?',
                 'hint' => 'Think about readability and maintainability.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -24,7 +24,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does SOLID represent?',
+                'text' => 'What does SOLID represent?',
                 'hint' => 'It is a set of 5 principles for object-oriented design.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -36,7 +36,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does DRY stand for?',
+                'text' => 'What does DRY stand for?',
                 'hint' => 'Avoid repeating yourself.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -48,7 +48,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does KISS mean in programming?',
+                'text' => 'What does KISS mean in programming?',
                 'hint' => 'Keep things simple.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -60,7 +60,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does YAGNI stand for?',
+                'text' => 'What does YAGNI stand for?',
                 'hint' => 'Do not implement features until necessary.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -72,7 +72,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is PSR in PHP?',
+                'text' => 'What is PSR in PHP?',
                 'hint' => 'PHP coding standards.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -84,7 +84,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does GDPR regulate?',
+                'text' => 'What does GDPR regulate?',
                 'hint' => 'European Union law.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -96,7 +96,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What are design patterns?',
+                'text' => 'What are design patterns?',
                 'hint' => 'Reusable solutions.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -108,7 +108,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does MVC stand for?',
+                'text' => 'What does MVC stand for?',
                 'hint' => 'A common architecture pattern.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -120,7 +120,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is version control?',
+                'text' => 'What is version control?',
                 'hint' => 'Think Git.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -134,7 +134,7 @@ class QuestionSeeder extends Seeder
             // Laravel questions
 
             [
-                'question' => 'What command creates a Laravel controller?',
+                'text' => 'What command creates a Laravel controller?',
                 'hint' => 'Use artisan.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -146,7 +146,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is Eloquent in Laravel?',
+                'text' => 'What is Eloquent in Laravel?',
                 'hint' => 'ORM.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -158,7 +158,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'Which file defines web routes in Laravel?',
+                'text' => 'Which file defines web routes in Laravel?',
                 'hint' => 'Inside the routes folder.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -170,7 +170,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What Blade directive is used for loops?',
+                'text' => 'What Blade directive is used for loops?',
                 'hint' => 'Starts with @.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -182,7 +182,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does ORM stand for?',
+                'text' => 'What does ORM stand for?',
                 'hint' => 'Database abstraction.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -194,7 +194,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is refactoring?',
+                'text' => 'What is refactoring?',
                 'hint' => 'Improving code without changing behavior.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -206,7 +206,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is dependency injection?',
+                'text' => 'What is dependency injection?',
                 'hint' => 'Laravel uses it heavily.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -218,7 +218,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is an API?',
+                'text' => 'What is an API?',
                 'hint' => 'Communication between software.',
                 'difficulty' => 'easy',
                 'answers' => [
@@ -230,7 +230,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What is middleware in Laravel?',
+                'text' => 'What is middleware in Laravel?',
                 'hint' => 'Runs between request and response.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -242,7 +242,7 @@ class QuestionSeeder extends Seeder
             ],
 
             [
-                'question' => 'What does REST stand for?',
+                'text' => 'What does REST stand for?',
                 'hint' => 'API architecture style.',
                 'difficulty' => 'medium',
                 'answers' => [
@@ -258,7 +258,7 @@ class QuestionSeeder extends Seeder
         foreach ($questions as $q) {
 
             $questionId = DB::table('questions')->insertGetId([
-                'question' => $q['question'],
+                'text' => $q['text'],
                 'hint' => $q['hint'],
                 'difficulty' => $q['difficulty'],
                 'created_at' => now(),
