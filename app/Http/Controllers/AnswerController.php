@@ -2,34 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\answerRequest;
-use App\Models\answer;
+use App\Http\Requests\AnswerRequest;
+use App\Models\Answer;
 
 class AnswerController extends Controller
 {
     public function index()
     {
-        return answer::all();
+        return Answer::all();
     }
 
-    public function store(answerRequest $request)
+    public function store(AnswerRequest $request)
     {
-        return answer::create($request->validated());
+        return Answer::create($request->validated());
     }
 
-    public function show(answer $answer)
+    public function show(Answer $answer)
     {
         return $answer;
     }
 
-    public function update(answerRequest $request, answer $answer)
+    public function update(AnswerRequest $request, Answer $answer)
     {
         $answer->update($request->validated());
 
         return $answer;
     }
 
-    public function destroy(answer $answer)
+    public function destroy(Answer $answer)
     {
         $answer->delete();
 

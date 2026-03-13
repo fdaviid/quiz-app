@@ -15,22 +15,22 @@ class QuestionController extends Controller
 
     public function store(questionRequest $request)
     {
-        return question::create($request->validated());
+        return Question::create($request->validated());
     }
 
-    public function show(question $question)
+    public function show(Question $question)
     {
         return $question;
     }
 
-    public function update(questionRequest $request, question $question)
+    public function update(QuestionRequest $request, Question $question)
     {
         $question->update($request->validated());
 
         return $question;
     }
 
-    public function destroy(question $question)
+    public function destroy(Question $question)
     {
         $question->delete();
 
