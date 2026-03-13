@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('questionId')->constrained('questions');
+            $table->foreignId('questionId')->constrained('questions')->onDelete('cascade');
             $table->string('answer');
             $table->boolean('isCorrect');
             $table->timestamps();
