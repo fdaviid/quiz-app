@@ -10,8 +10,6 @@ class QuestionController extends Controller
 {
     public function index(): View
     {
-//        $questions = Question::with('answers')->inRandomOrder()->take(10)->get();
-
         return view('welcome');
     }
 
