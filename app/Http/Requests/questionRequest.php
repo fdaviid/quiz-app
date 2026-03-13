@@ -9,7 +9,7 @@ class questionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'question' => ['required'],
+            'text' => ['required'],
             'hint' => ['required'],
             'difficulty' => ['required'],
         ];
