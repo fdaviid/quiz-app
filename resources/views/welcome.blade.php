@@ -61,7 +61,7 @@
                 <button id="readyButton" type="button" class="btn btn-outline-primary">Are You Ready?</button>
             </div>
             <div id="quiz" class="d-none">
-                <livewire:quiz />
+{{--                <livewire:quiz />--}}
             </div>
         </div>
     </div>
