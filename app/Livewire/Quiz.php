@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 class Quiz extends Component
 {
     public $questions;
+    public $questionIds;
     public $currentIndex = 0;
     public $selectedAnswer = null;
     public $result = null;
@@ -31,7 +32,7 @@ class Quiz extends Component
 
         $this->questions = Question::with('answers')->inRandomOrder()->take(10)->get();
 
-        Session::put('quiz_questions', $this->questions);
+        Session::put('quiz_questions', $this->questions->pluck('id')->toArray());
         Session::put('quiz_index', 0);
         Session::put('quiz_score', 0);
     }
@@ -83,6 +84,11 @@ class Quiz extends Component
 
     public function render()
     {
+        $ids = Session::get('quiz_questions', []);
+        $this->questions = Question::with('answers')->whereIn('id', $ids)->get();
+
+        $this->currentIndex = Session::get('quiz_index', 0);
+        $this->score = Session::get('quiz_score', 0);
         return view('components.⚡quiz');
     }
 }
