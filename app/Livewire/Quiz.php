@@ -84,11 +84,19 @@ class Quiz extends Component
 
     public function render()
     {
-        $ids = Session::get('quiz_questions', []);
-        $this->questions = Question::with('answers')->whereIn('id', $ids)->get();
+        $this->currentIndex = 0;
+        $this->score = 0;
+        $this->selectedAnswer = null;
+        $this->result = null;
+        $this->hint = false;
 
-        $this->currentIndex = Session::get('quiz_index', 0);
-        $this->score = Session::get('quiz_score', 0);
-        return view('components.⚡quiz');
+        session()->forget(['quiz_questions','quiz_index','quiz_score']);
+
+        $this->questions = Question::with('answers')->inRandomOrder()->take(10)->get();
+
+        // Store in session
+        Session::put('quiz_questions', $this->questions->pluck('id')->toArray());
+        Session::put('quiz_index', 0);
+        Session::put('quiz_score', 0);
     }
 }
