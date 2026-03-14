@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class answer extends Model
+class Answer extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,7 @@ class answer extends Model
         'isCorrect',
     ];
 
-    public function questionId(): BelongsTo
+    public function question(): BelongsTo
     {
         return $this->belongsTo(question::class, 'questionId');
     }
