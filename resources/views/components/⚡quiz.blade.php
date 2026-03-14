@@ -13,7 +13,7 @@
             {{ $questions[$currentIndex]->text }}
         </h4>
 
-        @foreach($questions[$currentIndex]->answers as $answer)
+        @foreach($questions[$currentIndex]->answers->shuffle() as $answer)
             <button wire:click="selectAnswer({{ $answer->id }})"
                 class="btn btn-outline-light w-100 mb-2"
                 @if($selectedAnswer) disabled @endif>
