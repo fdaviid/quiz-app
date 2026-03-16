@@ -67,7 +67,7 @@
                 Final Score: {{ $score }} / 10
             </h4>
 
-            <button wire:click="restartQuiz" onclick="location.reload()" class="btn btn-outline-secondary mt-3">
+            <button wire:click="mount" onclick="location.reload()" class="btn btn-outline-secondary mt-3">
                 Restart Quiz
             </button>
 
