@@ -91,9 +91,4 @@ class Quiz extends Component
         $this->score = Session::get('quiz_score', 0);
         return view('components.⚡quiz');
     }
-
-    public function restartQuiz()
-    {
-        $this->mount();
-    }
 }
