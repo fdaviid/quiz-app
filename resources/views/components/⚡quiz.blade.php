@@ -21,7 +21,7 @@
             </button>
         @endforeach
 
-        @if(!$hint && !$selectedAnswer?->isCorrect)
+        @if(!$hint)
             <div class="col-md-3 d-flex justify-content-end align-items-end m-auto">
                 <button wire:click="showHint" class="btn btn-outline-warning w-100 mb-2">
                     Show Hint
